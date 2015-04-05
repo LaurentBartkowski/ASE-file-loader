@@ -4,8 +4,8 @@ The ASE format is used through 3DStudioMax to export meshes through ASCII files.
 
 The source code is released as a tutorial and is of course highly questionable. Nevertheless, it is not meant to evolve.
 
-![](readme/wireframe.png)
+![](readme/wireframe.jpg)
 
-![](readme/textured.png)
+![](readme/textured.jpg)
 
 To go further: http://wiki.beyondunreal.com/Legacy:ASE_File_Format

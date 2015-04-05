@@ -1,0 +1,41 @@
+# Project: testObject
+# Makefile created by Dev-C++ 4.9.9.0
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o aseObject.o object.o undeformableObject.o mathlib.o $(RES)
+LINKOBJ  = main.o aseObject.o object.o undeformableObject.o mathlib.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" -L"F:/res/SDL-1.2.7/lib" -L"D:/code/SDL-1.2.7/lib" -L"D:/code/SDL_image-1.2.3/lib" -lmingw32 -lopengl32 -lglu32 -lSDLmain -lSDL -mwindows ../SDL_image-1.2.3/lib/SDL_image.lib  
+INCS =  -I"C:/Dev-Cpp/include"  -I"D:/code/SDL-1.2.7/include"  -I"D:/code/SDL-1.2.7/include/SDL"  -I"D:/code/SDL_image-1.2.3/include" 
+CXXINCS =  -I"C:/Dev-Cpp/include/c++/3.3.1"  -I"C:/Dev-Cpp/include/c++/3.3.1/mingw32"  -I"C:/Dev-Cpp/include/c++/3.3.1/backward"  -I"C:/Dev-Cpp/lib/gcc-lib/mingw32/3.3.1/include"  -I"C:/Dev-Cpp/include"  -I"D:/code/SDL-1.2.7/include"  -I"D:/code/SDL-1.2.7/include/SDL"  -I"D:/code/SDL_image-1.2.3/include" 
+BIN  = testObject.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before testObject.exe all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "testObject.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+aseObject.o: aseObject.cpp
+	$(CPP) -c aseObject.cpp -o aseObject.o $(CXXFLAGS)
+
+object.o: object.cpp
+	$(CPP) -c object.cpp -o object.o $(CXXFLAGS)
+
+undeformableObject.o: undeformableObject.cpp
+	$(CPP) -c undeformableObject.cpp -o undeformableObject.o $(CXXFLAGS)
+
+mathlib.o: mathlib.c
+	$(CPP) -c mathlib.c -o mathlib.o $(CXXFLAGS)
